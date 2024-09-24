@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: final_stock
+    description: "Aggregated deals data by deal stage."
+    columns:
+      - name: deal_stage
+        description: "The stage of the deal."
+        tests:
+          - not_null
+      - name: total_deals
+        description: "Total number of deals in each stage."
+        tests:
+          - not_null
+          - accepted_range:
+              min_value: 0
+      - name: total_amount
+        description: "The sum of deal amounts in each stage."
+        tests:
+          - not_null
+          - accepted_range:
+              min_value: 0
+      - name: first_closed_deal
+        description: "Earliest deal closing date."
+        tests:
+          - not_null
+      - name: last_closed_deal
+        description: "Latest deal closing date."
+        tests:
+          - not_null

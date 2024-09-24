@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: stock_warehouse
+    schema: public
+    enabled: true
+    tables:
+      - name: deals_fact
+        description: "Transactions data from the stock_warehouse database"

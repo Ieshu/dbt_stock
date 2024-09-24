@@ -1,0 +1,21 @@
+name: 'dbt_sales_proj'
+version: '1.0'
+
+profile: 'default'
+
+source-paths: ["models"]
+
+target-path: "target/"
+clean-targets:
+  - "target/"
+  - "dbt_modules/"
+
+# Correct paths for the models in your project
+models:
+  dbt_sales_proj:
+    staging:
+      +materialized: view  # Correct materialization for staging models
+      +schema: public      # You can specify a schema or leave it to default
+    final:
+      +materialized: table # Materialization for final models
+      +schema: public      # Ensure schema is correct

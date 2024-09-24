@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: stock_warehouse
+    schema: public  # Correct schema without duplication
+    tables:
+      - name: deals_fact
+        description: "This table contains deal information with deal stages and financial details."
+
+models:
+  - name: stg_stock
+    description: "Staged deals data from the deals_fact table."
+    columns:
+      - name: deal_id
+        description: "Unique identifier for each deal."
+        tests:
+          - not_null
+          - unique
+      - name: deal_amount
+        description: "The total amount of each deal."
+        tests:
+          - not_null
+      - name: deal_velocity
+        description: "The time it took to close a deal (in days)."
+        tests:
+          - not_null
+      - name: deal_close_month_year
+        description: "The month and year when the deal was closed."
+        tests:
+          - not_null
