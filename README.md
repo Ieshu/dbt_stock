@@ -44,7 +44,7 @@ Profiles.yml: Set up your profiles.yml file to connect to your database.
 
 Clone the project:
 
-git clone https://github.com/yourusername/dbt_sales_proj.git
+git clone https://github.com/Ieshu/dbt_stock.git
 
 cd dbt_sales_proj
 
